@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\herosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('/example',function(){
+    $page_title = "Example View";
+    return view('exampleview', compact('page_title'));
+})->name('example');
+
+Route::get('/heros',function(){
+    $page_title = "Super Heros";
+    return view('exampleview', compact('page_title'));
+})->name('heros');
+
+Route::get('/heros',[herosController::class,"index"])->name('index');
