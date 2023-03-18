@@ -29,3 +29,6 @@ Route::get('/heros',function(){
 })->name('heros');
 
 Route::get('/heros',[herosController::class,"index"])->name('index');
+Route::get('/heros',[allherosController::class,"indexall"])->name('indexall');
+Route::get('/heros',[fherosController::class,"indexf"])->name('indexf');
+
